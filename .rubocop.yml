@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+######## Style ########
+
+#日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# Missing top-level class documentation comment. を無効
+Style/Documentation:
+  Enabled: false
+
+Layout/EndOfLine:
+  Enabled: false

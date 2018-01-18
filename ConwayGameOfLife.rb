@@ -1,4 +1,5 @@
 #! /usr/bin/env ruby
+# frozen_string_literal: true
 
 # conwayのライフゲームをrubyで実装する
 
@@ -10,7 +11,7 @@ FPS = 30.0
 def mainloop
   loop do
     update
-    sleep 1.0/FPS
+    sleep 1.0 / FPS
   end
 end
 
@@ -21,7 +22,7 @@ def clear
   # \e エスケープ [2J 画面全体を消去
   print "\e[H\e[2J"
   # \033 エスケープ(8進) [2J 画面全体を消去
-  #print "\033[2J"
+  # print "\033[2J"
 end
 
 def update
@@ -31,11 +32,10 @@ def update
 end
 
 class Field
-
   include Singleton
 
   def initialize
-    @field = Array.new(3, Array.new(3,"@"))
+    @field = Array.new(3, Array.new(3, '@'))
   end
 
   def draw
@@ -46,8 +46,6 @@ class Field
       puts
     end
   end
-
 end
 
 mainloop
-
