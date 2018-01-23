@@ -26,12 +26,12 @@ def clear
 end
 
 def update
-  field = Field.instance
+  field = GameOfLifeField.instance
   clear
   field.draw
 end
 
-class Field
+class GameOfLifeField
   include Singleton
 
   def initialize
@@ -48,4 +48,4 @@ class Field
   end
 end
 
-mainloop
+#mainloop
