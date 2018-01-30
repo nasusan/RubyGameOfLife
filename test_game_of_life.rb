@@ -2,15 +2,21 @@
 # frozen_string_literal: true
 
 require 'test/unit'
+require_relative 'ConwayGameOfLife'
 
 class TestGameOfLife < Test::Unit::TestCase
-  # test '実行' do
-  def test_singleton_instance
-    field = Field.instance
-    assert_not_nil field
-  end
-
   def test_initialize
-    assert_equal 1, 1
+    initial_field = "
+      ...
+      ...
+      ...
+      "
+    actual = GameOfLifeField.new( initial_field ).draw
+    expected = "
+      ...
+      ...
+      ...
+      "
+    assert_equal actual,expected
   end
 end

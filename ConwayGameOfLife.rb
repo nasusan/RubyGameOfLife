@@ -4,8 +4,8 @@
 # conwayのライフゲームをrubyで実装する
 
 require 'pp'
-require 'singleton'
 
+=begin
 FPS = 30.0
 
 def mainloop
@@ -26,26 +26,23 @@ def clear
 end
 
 def update
-  field = Field.instance
+  field = GameOfLifeField.instance
   clear
   field.draw
 end
 
-class Field
-  include Singleton
+#mainloop
 
-  def initialize
-    @field = Array.new(3, Array.new(3, '@'))
+=end
+
+class GameOfLifeField
+
+  def initialize( initial_field )
+    @field = initial_field
   end
 
   def draw
-    @field.each do |y|
-      y.each do |x|
-        print x
-      end
-      puts
-    end
+    @field
   end
-end
 
-mainloop
+end
