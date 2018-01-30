@@ -5,18 +5,12 @@ require 'test/unit'
 require_relative 'ConwayGameOfLife'
 
 class TestGameOfLife < Test::Unit::TestCase
-  def test_initialize
+  def test_init
     initial_field = "
       ...
       ...
       ...
       "
-    actual = GameOfLifeField.new( initial_field ).draw
-    expected = "
-      ...
-      ...
-      ...
-      "
-    assert_equal actual,expected
+    assert_equal GameOfLifeField.new(initial_field).draw, initial_field
   end
 end
