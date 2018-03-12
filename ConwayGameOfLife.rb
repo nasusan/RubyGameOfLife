@@ -4,7 +4,6 @@
 # conwayのライフゲームをrubyで実装する
 
 require 'pp'
-require 'singleton'
 
 FPS = 30.0
 
@@ -23,12 +22,7 @@ class GameOfLifeField
   end
 
   def draw
-    @field.each do |y|
-      y.each do |x|
-        print x
-      end
-      puts
-    end
+    @field
   end
 
   def clear
